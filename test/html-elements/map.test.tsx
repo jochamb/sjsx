@@ -1,15 +1,15 @@
 import { describe, it } from 'node:test';
 import { strictEqual } from 'node:assert';
-import { render } from '@jochamb/sjsx/testing-library';
+import { renderToString } from '@jochamb/sjsx/render-to-string';
 
 describe('html <map> tag', () => {
   it('renders when self-closing tag', async () => {
-    const { result } = await render(<map />);
+    const { result } = await renderToString(<map />);
     strictEqual(result, '<map></map>');
   });
 
   it('renders when default html closing tag', async () => {
-    const { result } = await render(<map></map>);
+    const { result } = await renderToString(<map></map>);
     strictEqual(result, '<map></map>');
   });
 });

@@ -1,11 +1,11 @@
 import { describe, it } from 'node:test';
 import { strictEqual, rejects } from 'node:assert';
-import { render } from '@jochamb/sjsx/testing-library';
+import { renderToString } from '@jochamb/sjsx/render-to-string';
 import { JSXNode } from '@jochamb/sjsx/types';
 
 describe(`basic rendering`, () => {
   it('basic components', async () => {
-    const { result } = await render(<div>basic</div>);
+    const { result } = await renderToString(<div>basic</div>);
     strictEqual(result, '<div>basic</div>');
   });
 
@@ -16,19 +16,19 @@ describe(`basic rendering`, () => {
         <br />
       </div>
     );
-    const rendered = await render(<Component />);
+    const rendered = await renderToString(<Component />);
     strictEqual(rendered.result, '<div><p>basic</p><br></div>');
   });
 
   it('handles self-closing to void element', async () => {
     const Component = () => <link />;
-    const { result } = await render(<Component />);
+    const { result } = await renderToString(<Component />);
     strictEqual(result, '<link>');
   });
 
   it('handles self-closing to regular element', async () => {
     const Component = () => <div />;
-    const { result } = await render(<Component />);
+    const { result } = await renderToString(<Component />);
     strictEqual(result, '<div></div>');
   });
 
@@ -39,7 +39,7 @@ describe(`basic rendering`, () => {
         <div>fragment</div>
       </>
     );
-    const { result } = await render(<Component />);
+    const { result } = await renderToString(<Component />);
     strictEqual(result, '<div>basic</div><div>fragment</div>');
   });
 
@@ -70,7 +70,7 @@ describe(`basic rendering`, () => {
         <span>complex</span>
       </>
     );
-    const { result } = await render(<Component3 />);
+    const { result } = await renderToString(<Component3 />);
     strictEqual(
       result,
       '<div><div><div><div><span>so fancy</span><p>nested childs</p></div><br><script></script><link><a><p>basic</p></a></div></div></div><span>complex</span>'
@@ -96,7 +96,7 @@ describe(`basic rendering`, () => {
         {{ dangerouslySetUnescapedHtml: '<script>log(`lol hacked`)</script>' }}
       </div>
     );
-    const { result } = await render(<Component4 />);
+    const { result } = await renderToString(<Component4 />);
     strictEqual(
       result,
       '<div><div>basic</div><div>still basic</div><div>wow, much async</div>escape me &lt;div /&gt;1001falsetrue<script>log(`lol hacked`)</script></div>'
@@ -105,6 +105,6 @@ describe(`basic rendering`, () => {
 
   it('handles non-serializable values', () => {
     // @ts-expect-error -- enforcing runtime error
-    rejects(() => render(<div>{{ bad: 'very' }}</div>), /SerializationError/);
+    rejects(() => renderToString(<div>{{ bad: 'very' }}</div>), /SerializationError/);
   });
 });
