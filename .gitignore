@@ -1,5 +1,5 @@
 # npm
 /node_modules
 
-# esbuild
+# tsc
 /dist
