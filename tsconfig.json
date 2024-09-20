@@ -4,7 +4,6 @@
     "moduleResolution": "Bundler",
     "target": "ES2022",
     "outDir": "./dist",
-    "rootDir": "src",
     "baseUrl": "./",
     "declaration": true,
     "removeComments": true,
@@ -43,7 +42,6 @@
     "paths": {
       "@jochamb/sjsx/*": ["./src/*"]
     },
-    "typeRoots": ["./node_modules/@types"],
     "jsx": "react-jsx",
     "jsxImportSource": "@jochamb/sjsx"
   },
