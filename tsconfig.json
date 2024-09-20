@@ -41,12 +41,12 @@
     "strict": true,
     "noEmit": true,
     "paths": {
-      "@jochamb/sjsx/*": ["./src/jsx/*"]
+      "@jochamb/sjsx/*": ["./src/*"]
     },
     "typeRoots": ["./node_modules/@types"],
     "jsx": "react-jsx",
     "jsxImportSource": "@jochamb/sjsx"
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "./test/**/*"],
   "exclude": ["./node_modules"]
 }
