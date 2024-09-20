@@ -14,14 +14,14 @@
   ],
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
-    "lint": "eslint \"src/**/*.{ts,tsx}\"",
-    "lint:fix": "eslint --fix \"src/**/*.{ts,tsx}\"",
+    "lint": "eslint \"{src,test}/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint --fix \"{src,test}/**/*.{ts,tsx}\"",
     "precommit": "sort-package-json 'package.json' && git add .",
     "prepare": "husky install",
     "prepublishOnly": "npm run build",
-    "test": "tsx --test \"src/**/*.test.{ts,tsx}\"",
+    "test": "tsx --test \"test/**/*.test.{ts,tsx}\"",
     "test:only": "tsx --test-only --watch",
-    "test:watch": "tsx --test --watch \"src/**/*.test.{ts,tsx}\"",
+    "test:watch": "tsx --test --watch \"test/**/*.test.{ts,tsx}\"",
     "types": "tsc",
     "upgrade-packages": "npm-check-updates -p npm --interactive"
   },

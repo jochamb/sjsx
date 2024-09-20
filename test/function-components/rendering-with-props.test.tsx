@@ -37,6 +37,14 @@ describe(`rendering with props`, () => {
     strictEqual(result, `<p data-value="run me">basic</p>`);
   });
 
+  it('handles function MyComponent() {} syntax', async () => {
+    function Component() {
+      return <p data-thing="yes">I did a thing</p>;
+    }
+    const { result } = await render(<Component />);
+    strictEqual(result, `<p data-thing="yes">I did a thing</p>`);
+  });
+
   it('handles null', async () => {
     const Component = () => <p data-value={null}>basic</p>;
     const { result } = await render(<Component />);
