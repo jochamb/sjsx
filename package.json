@@ -15,6 +15,7 @@
     "lint:fix": "eslint --fix \"src/**/*.{ts,tsx}\"",
     "precommit": "sort-package-json 'package.json' && git add .",
     "prepare": "husky install",
+    "prepublish": "npm run build",
     "test": "tsx --test \"src/**/*.test.{ts,tsx}\"",
     "test:only": "tsx --test-only --watch",
     "test:watch": "tsx --test --watch \"src/**/*.test.{ts,tsx}\"",
