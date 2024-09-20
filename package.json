@@ -5,11 +5,12 @@
   "author": "jochamb",
   "type": "module",
   "exports": {
+    ".": "./dist/index.js",
     "./jsx-runtime": "./dist/jsx-runtime.js",
-    "./package.json": "./package.json",
-    "./*": "./dist/*"
+    "./testing-library": "./dist/testing-library.js",
+    "./package.json": "./package.json"
   },
-  "types": "./dist/jsx-runtime.d.ts",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -19,7 +20,7 @@
     "lint:fix": "eslint --fix \"{src,test}/**/*.{ts,tsx}\"",
     "precommit": "sort-package-json 'package.json' && git add .",
     "prepare": "husky install",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "rm -rf dist && npm run build",
     "test": "tsx --test \"test/**/*.test.{ts,tsx}\"",
     "test:only": "tsx --test-only --watch",
     "test:watch": "tsx --test --watch \"test/**/*.test.{ts,tsx}\"",
@@ -34,7 +35,6 @@
     "@types/node": "22.5.5",
     "@typescript-eslint/eslint-plugin": "7.13.0",
     "@typescript-eslint/parser": "7.13.0",
-    "esbuild": "0.23.0",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
@@ -46,7 +46,6 @@
     "npm-check-updates": "^16.14.20",
     "prettier": "3.3.2",
     "sort-package-json": "2.10.0",
-    "tsconfig-paths": "4.2.0",
     "tsx": "4.16.5",
     "typescript": "5.4.5"
   }
