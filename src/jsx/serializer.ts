@@ -1,4 +1,4 @@
-import { JSXNode, RenderedJSX } from './types.js';
+import { JSXNode, RenderedJSX } from './types';
 
 export class SerializationError extends Error {
   public constructor(public readonly value: unknown) {
