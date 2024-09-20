@@ -9,6 +9,7 @@
     "./package.json": "./package.json",
     "./*": "./dist/*"
   },
+  "types": "./dist/jsx-runtime.d.ts",
   "files": [
     "dist"
   ],
