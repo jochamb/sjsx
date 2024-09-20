@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import { strictEqual, rejects } from 'node:assert';
-import { render } from '@jochamb/sjsx/testing-library';
+import { renderToString } from '@jochamb/sjsx/render-to-string';
 
 describe(`async rendering`, () => {
   it('renders', async () => {
@@ -14,7 +14,7 @@ describe(`async rendering`, () => {
       return <div>{asyncValue}</div>;
     }
 
-    const { result } = await render(<Component />);
+    const { result } = await renderToString(<Component />);
     strictEqual(result, '<div>cool</div>');
   });
 
@@ -29,6 +29,6 @@ describe(`async rendering`, () => {
       return <div>{asyncValue}</div>;
     }
 
-    await rejects(() => render(<Component />), /bad/);
+    await rejects(() => renderToString(<Component />), /bad/);
   });
 });

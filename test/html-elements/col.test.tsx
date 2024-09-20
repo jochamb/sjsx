@@ -1,15 +1,15 @@
 import { describe, it } from 'node:test';
 import { strictEqual } from 'node:assert';
-import { render } from '@jochamb/sjsx/testing-library';
+import { renderToString } from '@jochamb/sjsx/render-to-string';
 
 describe('html <col> tag', () => {
   it('renders void element when self-closing tag', async () => {
-    const { result } = await render(<col />);
+    const { result } = await renderToString(<col />);
     strictEqual(result, '<col>');
   });
 
   it('renders void element when default html closing tag', async () => {
-    const { result } = await render(<col></col>);
+    const { result } = await renderToString(<col></col>);
     strictEqual(result, '<col>');
   });
 });

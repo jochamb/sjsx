@@ -1,15 +1,15 @@
 import { describe, it } from 'node:test';
 import { strictEqual } from 'node:assert';
-import { render } from '@jochamb/sjsx/testing-library';
+import { renderToString } from '@jochamb/sjsx/render-to-string';
 
 describe('html <animateMotion> tag', () => {
   it('renders when self-closing tag', async () => {
-    const { result } = await render(<animateMotion />);
+    const { result } = await renderToString(<animateMotion />);
     strictEqual(result, '<animateMotion></animateMotion>');
   });
 
   it('renders when default html closing tag', async () => {
-    const { result } = await render(<animateMotion></animateMotion>);
+    const { result } = await renderToString(<animateMotion></animateMotion>);
     strictEqual(result, '<animateMotion></animateMotion>');
   });
 });

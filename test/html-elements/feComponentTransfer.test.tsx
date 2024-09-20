@@ -1,15 +1,15 @@
 import { describe, it } from 'node:test';
 import { strictEqual } from 'node:assert';
-import { render } from '@jochamb/sjsx/testing-library';
+import { renderToString } from '@jochamb/sjsx/render-to-string';
 
 describe('html <feComponentTransfer> tag', () => {
   it('renders when self-closing tag', async () => {
-    const { result } = await render(<feComponentTransfer />);
+    const { result } = await renderToString(<feComponentTransfer />);
     strictEqual(result, '<feComponentTransfer></feComponentTransfer>');
   });
 
   it('renders when default html closing tag', async () => {
-    const { result } = await render(<feComponentTransfer></feComponentTransfer>);
+    const { result } = await renderToString(<feComponentTransfer></feComponentTransfer>);
     strictEqual(result, '<feComponentTransfer></feComponentTransfer>');
   });
 });
