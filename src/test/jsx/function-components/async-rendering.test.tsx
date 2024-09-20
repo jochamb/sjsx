@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import { strictEqual, rejects } from 'node:assert';
-import { render } from '@sjsx/testing-library';
+import { render } from '@jochamb/sjsx/testing-library';
 
 describe(`async rendering`, () => {
   it('renders', async () => {

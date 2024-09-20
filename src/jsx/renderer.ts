@@ -1,6 +1,6 @@
-import { JSX } from '@sjsx/jsx-runtime';
-import { serializer } from '@sjsx/serializer';
-import { FunctionComponent, RenderedJSX } from '@sjsx/types';
+import { JSX } from '@jochamb/sjsx/jsx-runtime';
+import { serializer } from '@jochamb/sjsx/serializer';
+import { FunctionComponent, RenderedJSX } from '@jochamb/sjsx/types';
 
 export function renderJSX(
   tag: string | FunctionComponent | undefined,

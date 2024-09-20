@@ -40,17 +40,11 @@
     "strict": true,
     "noEmit": true,
     "paths": {
-      "@sjsx/*": ["./src/jsx/*"],
-      "@app/*": ["./src/app/*"],
-      "@internals/*": ["./src/internals/*"],
-      "@cli/*": ["./src/cli/*"],
-      "@test/*": ["./test/*"],
-      "@contenthash/*": ["./_contenthash/*"],
-      "@e2e/*": ["./e2e/*"]
+      "@jochamb/sjsx/*": ["./src/jsx/*"]
     },
     "typeRoots": ["./node_modules/@types"],
     "jsx": "react-jsx",
-    "jsxImportSource": "@sjsx"
+    "jsxImportSource": "@jochamb/sjsx"
   },
   "include": [
     "./src/jsx/**/*",

@@ -5,6 +5,7 @@
   "author": "jochamb",
   "type": "module",
   "scripts": {
+    "build": "tsc --project tsconfig.build.json",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{ts,tsx}\"",
     "precommit": "sort-package-json 'package.json' && git add .",
@@ -12,7 +13,7 @@
     "test": "tsx --test \"src/**/*.test.{ts,tsx}\"",
     "test:only": "tsx --test-only --watch",
     "test:watch": "tsx --test --watch \"src/**/*.test.{ts,tsx}\"",
-    "types": "tsc --noEmit",
+    "types": "tsc",
     "upgrade-packages": "npm-check-updates -p npm --interactive"
   },
   "lint-staged": {
@@ -20,7 +21,7 @@
     "*.js": "eslint --cache --fix"
   },
   "devDependencies": {
-    "@types/node": "20.14.2",
+    "@types/node": "22.5.5",
     "@typescript-eslint/eslint-plugin": "7.13.0",
     "@typescript-eslint/parser": "7.13.0",
     "esbuild": "0.23.0",
