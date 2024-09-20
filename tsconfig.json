@@ -4,6 +4,7 @@
     "moduleResolution": "Bundler",
     "target": "ES2022",
     "outDir": "./dist",
+    "rootDir": ".",
     "baseUrl": "./",
     "declaration": true,
     "removeComments": true,

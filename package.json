@@ -8,8 +8,7 @@
     ".": "./dist/index.js",
     "./jsx-runtime": "./dist/jsx-runtime.js",
     "./testing-library": "./dist/testing-library.js",
-    "./package.json": "./package.json",
-    "./*": "./dist"
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -17,12 +16,12 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.build.json",
+    "build": "rm -rf dist && tsup src/index.ts src/jsx-runtime.ts src/testing-library.tsx --format esm --no-splitting --dts",
     "lint": "eslint \"{src,test}/**/*.{ts,tsx}\"",
     "lint:fix": "eslint --fix \"{src,test}/**/*.{ts,tsx}\"",
     "precommit": "sort-package-json 'package.json' && git add .",
     "prepare": "husky install",
-    "prepublishOnly": "rm -rf dist && npm run build",
+    "prepublishOnly": "npm run build",
     "test": "tsx --test \"test/**/*.test.{ts,tsx}\"",
     "test:only": "tsx --test-only --watch",
     "test:watch": "tsx --test --watch \"test/**/*.test.{ts,tsx}\"",
@@ -47,6 +46,7 @@
     "npm-check-updates": "^16.14.20",
     "prettier": "3.3.2",
     "sort-package-json": "2.10.0",
+    "tsup": "8.3.0",
     "tsx": "4.16.5",
     "typescript": "5.4.5"
   }
