@@ -1,7 +1,7 @@
 // docs: https://www.typescriptlang.org/docs/handbook/jsx.html
 
-import { JSXNode, RenderedJSX } from './types.js';
-import { renderJSX, renderFragment } from './renderer.js';
+import { JSXNode, RenderedJSX } from './types';
+import { renderJSX, renderFragment } from './renderer';
 
 namespace JSX {
   export interface ElementChildrenAttribute {

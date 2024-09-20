@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import { strictEqual, rejects } from 'node:assert';
-import { render } from '@jochamb/sjsx/testing-library.js';
+import { render } from '@jochamb/sjsx/testing-library';
 
 describe(`rendering with props`, () => {
   it('handles strings', async () => {
