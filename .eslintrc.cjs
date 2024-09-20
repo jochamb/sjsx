@@ -79,12 +79,6 @@ module.exports = {
       },
     },
     {
-      files: ['src/**/*'],
-      rules: {
-        'no-restricted-imports': 'off', // want to use relative imports for published package files
-      },
-    },
-    {
       'files': 'jsx-runtime.ts',
       rules: {
         '@typescript-eslint/no-namespace': 'off',

@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import { strictEqual, rejects } from 'node:assert';
 import { render } from '@jochamb/sjsx/testing-library';
-import { JSXNode } from '@jochamb/sjsx';
+import { JSXNode } from '@jochamb/sjsx/types';
 
 describe(`basic rendering`, () => {
   it('basic components', async () => {
