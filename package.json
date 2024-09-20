@@ -1,6 +1,6 @@
 {
   "name": "@jochamb/sjsx",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "stateless jsx",
   "author": "jochamb",
   "type": "module",
