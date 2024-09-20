@@ -8,7 +8,8 @@
     ".": "./dist/index.js",
     "./jsx-runtime": "./dist/jsx-runtime.js",
     "./testing-library": "./dist/testing-library.js",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./*": "./dist"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
