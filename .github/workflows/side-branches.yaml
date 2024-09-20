@@ -1,0 +1,22 @@
+name: side-branches
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}-${{ github.workflow}}
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  test:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.5.1
+          cache: 'npm'
+      - run: npm i
+      - run: npm test
+      - run: npm run build
