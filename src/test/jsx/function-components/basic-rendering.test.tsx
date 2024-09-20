@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import { strictEqual, rejects } from 'node:assert';
-import { render } from '@jochamb/sjsx/testing-library';
-import { JSXNode } from '@jochamb/sjsx/types';
+import { render } from '@jochamb/sjsx/testing-library.js';
+import { JSXNode } from '@jochamb/sjsx/types.js';
 
 describe(`basic rendering`, () => {
   it('basic components', async () => {
@@ -104,7 +104,6 @@ describe(`basic rendering`, () => {
   });
 
   it('handles non-serializable values', () => {
-    // @ts-expect-error -- ignore type error to verify runtime errors
     rejects(() => render(<div>{{ bad: 'very' }}</div>), /SerializationError/);
   });
 });
