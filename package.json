@@ -7,7 +7,6 @@
   "exports": {
     ".": "./dist/index.js",
     "./jsx-runtime": "./dist/jsx-runtime.js",
-    "./testing-library": "./dist/testing-library.js",
     "./package.json": "./package.json"
   },
   "main": "./dist/index.js",
