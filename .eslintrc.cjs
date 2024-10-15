@@ -79,7 +79,7 @@ module.exports = {
       },
     },
     {
-      'files': 'jsx-runtime.ts',
+      'files': ['jsx-runtime.ts', 'jsx-dev-runtime.ts'],
       rules: {
         '@typescript-eslint/no-namespace': 'off',
       },
